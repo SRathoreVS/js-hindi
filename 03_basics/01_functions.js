@@ -45,8 +45,45 @@ function userLoginMsg(username = "NAME"){
 }
 
 console.log(userLoginMsg("Satyam")); //Satyam just logged in
-console.log(userLoginMsg()); // undefined just logged in
-console.log(userLoginMsg("")); // just logged in 
+// console.log(userLoginMsg()); // undefined just logged in
+// console.log(userLoginMsg("")); // just logged in 
 
 // we can assign a default value in Parameter , as , function varname(user = "abcxyz"){} , here abcxyz will be the default value if no value is given .
 
+// Multiple parameters ++++++++++++++++++++++++++
+// +++++++++++++++  REST OPERATOR  ++++++++++++++
+
+function calcCartPrice(...nums) {
+    return nums
+}
+console.log(calcCartPrice(1,2,3,4,5,6,7,8));//[1, 2, 3, 4, 5, 6, 7, 8]
+
+function calcCartPrice2(num1,num2,...nums) {
+    return nums
+}
+console.log(calcCartPrice(1,2,3,4,5,6,7,8)); //[3, 4, 5, 6, 7, 8] nums 
+
+// const user = {
+//     username : "satyam",
+//     price : 99
+// }
+
+function handleObj(anyObject){
+    console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`);
+}
+
+//handleObj(user); //Username is satyam and price is 99
+
+handleObj({
+    username : "satyam",
+    price : 99
+}) //Username is satyam and price is 99 // we can pass the object keys and values directly in the function calling instead of creating one 
+
+// +++++++++ ARRAYS 
+
+const myNewArr = [200,400,600,2499]
+function returnSecvalue(getArray){
+    return getArray[1]
+}
+
+console.log(returnSecvalue(myNewArr)); // 400
