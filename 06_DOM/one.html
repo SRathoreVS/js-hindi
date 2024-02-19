@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div><h1 id="tittle" class="heading">Dom Learning on Chai or code<span style="display: none;"> test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, modi?</p>
+    <input type="password" name="" id="">
+    <ul>
+        <li class="list=item">one</li>
+        <li class="list=item">two</li>
+        <li class="list=item">three</li>
+        <li class="list=item">four</li>
+    </ul>
+</div>
+</body>
+</html>
+<!--
+    console.log(window) whatever is there for the desktop front UI used in it will reflect all the properties in console
+
+    console.log(window.document) whatever there is related to the document of that page HTML part 
+
+    console.dir(window) everthying will be shown
+
+    tittle.innerHTML ;
+    O/P = 'Dom Learning on Chai or code<span style="display: none;"> test text</span>'
+    (it will display all the contect in the element with all the HTML tags imbuded)
+
+    tittle.innerText;
+    O/P = 'Dom Learning on Chai or code'
+    (it will display the only text which is going to be visible on screen )
+
+    tittle.textContent;
+    O/P = 'Dom Learning on Chai or code test text'
+    (it will display all the text present in that ID even its hidden)
+
+    document.querySelector('h2');
+    O/P = <h2>Lorem ipsum dolor sit.</h2>
+    (using querySelector will allways give the first occurence of that element)
+
+    document.querySelectorAll('h2');
+    O/P = <h2>Lorem ipsum dolor sit.</h2>
+          <h2>Lorem ipsum dolor sit.</h2>
+          <h2>Lorem ipsum dolor sit.</h2>
+    (using querySelector will allways give the All the occurence of that element)
+
+    document.querySelector('#tittle')
+    O/P = <h1 id="tittle" class="heading">Dom Learning on Chai or code<span style="display: none;"> test text</span></h1>
+
+    const tempLiList = document.querySelectorAll('li');
+    (selecting all the Li elements at once)
+    
+    O/P = 
+    NodeList(3) [li, li, li]
+0
+: 
+li
+1
+: 
+li
+2
+: 
+li
+length
+: 
+3
+[[Prototype]]
+: 
+NodeList
+entries
+: 
+ƒ entries()
+forEach
+: 
+ƒ forEach()
+item
+: 
+ƒ item()
+keys
+: 
+ƒ keys()
+length
+: 
+(...)
+values
+: 
+ƒ values()
+constructor
+: 
+ƒ NodeList()
+Symbol(Symbol.iterator)
+: 
+ƒ values()
+Symbol(Symbol.toStringTag)
+: 
+"NodeList"
+get length
+: 
+ƒ length()
+[[Prototype]]
+: 
+Object
+constructor
+: 
+ƒ Object()
+hasOwnProperty
+: 
+ƒ hasOwnProperty()
+isPrototypeOf
+: 
+ƒ isPrototypeOf()
+propertyIsEnumerable
+: 
+ƒ propertyIsEnumerable()
+toLocaleString
+: 
+ƒ toLocaleString()
+toString
+: 
+ƒ toString()
+valueOf
+: 
+ƒ valueOf()
+__defineGetter__
+: 
+ƒ __defineGetter__()
+__defineSetter__
+: 
+ƒ __defineSetter__()
+__lookupGetter__
+: 
+ƒ __lookupGetter__()
+__lookupSetter__
+: 
+ƒ __lookupSetter__()
+__proto__
+: 
+(...)
+get __proto__
+: 
+ƒ __proto__()
+set __proto__
+: 
+ƒ __proto__()
+
+(it has properties of array and objwct but is different than them , its Node list.)
+
+By doing this , by using its index we can manipulate the elements ,
+tempLiList[0].style.backgroundColor = 'pink'
+
+tempLiList.forEach( (l) => {
+    l.style.backgroundColor = 'green'
+})
+O/P = by using forEach() it turn all the element to particular specific given design.
+_____________________________________________________
+const tempClasslist = document.getElementsByClassName('list-item')
+
+HTMLCollection []
+(we get a HTMLcollection[] using a className , it is different than NodeList , as we can loop NodeList by using ForEach() , but HTMLcollection we need to convert the variable to an Array)
+
+convert ====
+const classArray = Array.from(tempClassList)
+classArray;
+O/P = []
+_________________________________________________________
+as we get this by ,
+const allH2 = document.querySelectorAll('.mw-headline')
+//////NODE LIST ////////////
+So we can use forEach() loop to loop over the elements 
+
+allH2.forEach( (l) => {
+    l.style.color = 'black'
+    l.style.backgroundColor = 'pink'
+    l.style.padding = '15px'
+    l.style.borderRadius = '15px'
+    l.innerText = 'satyam'
+})
+-->
