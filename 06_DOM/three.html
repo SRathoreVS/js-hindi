@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAI or CODE</title>
+</head>
+<body style="background-color: #212121; color: azure;">
+    
+</body>
+<script>
+    //everything is attached in console not on webpage
+
+   const div1 =  document.createElement('div')
+   console.log(div1);
+   div1.className = "main"
+   div1.id = Math.round(Math.random() * 10 + 1) // randomly changing iD of the element
+   div1.setAttribute("tittle","generated tittle") // But this here Set element do not overrides value , but gives or set new value to the element 
+   div1.style.backgroundColor="green"
+   div1.style.padding = "12px"
+   
+   // Bothh are correct option to add the text to element 
+
+   // (1) div1.innerText = "chai aur code" // this override ts values after taking it from the orignal HTML values and give it the new value 
+
+   // (2) instead of overriding use this property , createTextNode
+   const addText  = document.createTextNode = "chai aur code"
+   div1.appendChild(addText)
+
+   // attaching things on web page 
+
+   document.body.appendChild(div1)
+
+
+
+
+</script>
+</html>
