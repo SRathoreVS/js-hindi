@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAI AUR CODE = DOM </title>
+</head>
+<body style="background-color: #212121; color: antiquewhite;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+//*********************** ADD VALUE *************************
+// GENERAL WAY OF INJECTIING
+//______________________________________
+    function addlanguage(langName) {
+      const li = document.createElement('li')
+      li.innerHTML = `${langName}`
+      document.querySelector('.language').appendChild(li)
+    }
+    addlanguage("python")
+    addlanguage("TypeScript")
+
+// OPTIMIZED WAY OF INJECTIING
+//______________________________________
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage("GoLang")
+
+
+//*********************** EDIT VALUE *************************
+// (1) innerHTML
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Mojo"//overrides
+
+//(2) textContent
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+//(3) outerHTML
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>React</li>'
+
+//*********************** REMOVE VALUE *************************
+
+    const lastLang =document.querySelector("li:last-child")
+    lastLang.remove()
+    
+</script>
+</html>
