@@ -48,7 +48,7 @@
         <span>to change the background color of this page!</span>
       </h2>
     </div>
-    <script src="chaiaurcode.js"></script>
+    <script src="project.js"></script>
   </body>
 </html>
 
@@ -124,7 +124,7 @@ buttons.forEach( (button) => {
       </form>
     </div>
   </body>
-  <script src="chaiaurcode.js"></script>
+  <script src="project.js"></script>
 </html>
 
 
@@ -203,7 +203,7 @@ form.addEventListener('submit', (e) => {
       <div id="banner"><span>Your local time</span></div>
       <div id="clock"></div>
     </div>
-    <script src="chaiaurcode.js"></script>
+    <script src="project.js"></script>
   </body>
 </html>
 
