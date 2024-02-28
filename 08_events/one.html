@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Image
+        <div>
+            <ul id="images">
+                <li><img src="https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg" width="200px" alt="photoshop" id="japan"></li>
+                <li><img src="https://images.pexels.com/photos/1366909/pexels-photo-1366909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="200px" alt="photoshop" id="river"></li>
+                <li><img src="https://images.pexels.com/photos/2088019/pexels-photo-2088019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="200px" alt="photoshop" id="owl"></li>
+                <!-- (01.) onclick="alert('owl')"-->
+                <li><img src="https://images.pexels.com/photos/321552/pexels-photo-321552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="200px" alt="photoshop" id="prayer"></li>
+                <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+            </ul>
+        </div>
+    </h2>
+</body>
+<script>
+    // JavaScript is a sequentially run language , events are the exception where Js is forced to move out of sequence and perform 
+
+ //  (2.)
+// doing like this also can cause the problem ,it does not give much things for the ID ,weshould use Event Listeners 
+    // document.getElementById('owl').onclick = ()=> {
+    //     alert("Owl clicked")
+    // }
+    // (04.)---attachEvent()
+    // (05.)---jQuery - onEventListerner
+
+// EVENTS --------->
+
+// type , timestamp , defaultPrevented 
+// target , toElement , srcElement , currentTarget 
+// clientX,clientY , screenX , screenY , tiltX ,tiltY
+// altkey , ctrlkey , shifykey , keyCode
+
+
+// (03.)---BEST Approach
+// weget morefeatures while using eventListeners 
+    // document.getElementById('images').addEventListener('click', (e) => {
+    //     //alert('Owl Clicked again')
+    //     console.log("clicked inside UL");
+    // },false)
+    // document.getElementById('owl').addEventListener('click', (e) => {
+    //     //alert('Owl Clicked again')
+    //     console.log("clicked Owl");
+    //     e.stopPropagation();
+    // },false)
+ 
+    // document.getElementById('google').addEventListener('click',(e) => {
+    //     e.preventDefault()
+    //     e.stopPropagation
+    //     console.log("google clicked");
+    // },false)
+
+// EVENT PROPAGATION ---> False is default.
+//--------------------------------------------
+// FALSE-- event Bubbling -- it goes up from when clicked the the inner HTML as in here li > ul 
+// TRUE-- even Scrapping -- it performs the normal flow head element then the inner el, ul > li 
+//  e.stopPropagation(); --- using this in false , will stop the propagation on going back to head element .
+// e.preventDefault()
+
+    document.querySelector('#images')  .addEventListener('click',(e) => {
+        console.log(e);
+        console.log(e.target.tagName); // when clicked will get the parent element for the clicked element 
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        //removeIt.parentNode.removeChild(removeIt)
+    })
+ 
+
+</script>
+</html>
