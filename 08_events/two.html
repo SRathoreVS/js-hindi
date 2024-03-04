@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai or code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const saySatyam = function(){
+        console.log("Satyam");
+    }
+    const changeTxt = function(){
+        document.querySelector('h1').innerHTML = "JAVASCRIPT SERIES"
+    }
+        //function setTimeout(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number
+
+        // Asking for timeout to wait for 2 sec and then perform 
+    setTimeout(saySatyam,2000)
+    const changeMe = setTimeout(changeTxt,2000)
+
+    //clearTimeout(changeMe) // clearInterval always takes in the reference of the setTimeout .
+
+    document.querySelector('#stop').addEventListener('click',(e) => {
+        clearTimeout(changeMe)
+        console.log("Stopped");
+    })
+//-------------------------------------------------------------------
+       //function setInterval(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number
+
+       // Asking for interval , that after the given time i will perform the same action again and again 
+    setInterval(function(){
+       // console.log("Priya");
+    },2000)
+//-------------------------------------------------------------------
+
+    
+</script>
+</html>
